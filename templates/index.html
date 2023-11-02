@@ -1,0 +1,28 @@
+{% extends 'base2.html' %}
+{% block title %}Welcome!{% endblock title %}
+{% block headmessage %}
+<h3 style="font-family:微軟正黑體;">本站文章列表</h3>
+{% endblock headmessage %}
+{% block content %}
+{% for post in posts %}
+<div class="card">
+    <div class="card-header">
+        <a href="/post/{{post.slug}}" style="font-family:微軟正黑體;font-size:18pt;font-weight:bold">{{post.title}}</a>
+    </div>
+
+    <div class='card-body' style='background-color:#a7d6e1'>
+        <p>
+            {{ post.body | truncatechars:40 }}
+        </p>
+    </div>
+
+    <div class='card-footer'  style='background-color:#a7d6e1'>
+        <p>
+            發佈時間：{{ post.pub_date | date:"Y M d, h:m:s"}}
+        </p>
+    </div>
+</div>
+<br>
+{% endfor %}
+{% endblock %}
+
