@@ -7,9 +7,9 @@ from django.shortcuts import render
 
 # Create your views here.
 def homepage(request):
-    postsbb = Postbb.objects.all()
+    posts = Postbb.objects.all()
     now = datetime.now()
-    return render(request, 'index.html', locals())
+    return render(request, 'index.html', {'posts':posts})
    
 def showpost(request, slug):
     try:
