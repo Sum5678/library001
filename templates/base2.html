@@ -8,19 +8,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         body {
-            background-color: #c1d1e3;
+            background-color: rgba(97, 127, 160, 0.973) ;
         }
 
         .navbar {
-            background-color: #007bff;
+            background-color: rgb(139, 184, 234);
         }
 
         .navbar-brand {
-            color: #ffffff;
+            color: #17314ee3;
         }
 
         .navbar-nav .nav-link {
-            color: #ffffff;
+            color:rgb(20, 92, 186);
         }
 
         .container {
@@ -35,18 +35,14 @@
 <body>
     <!-- 導覽欄 -->
     <nav class="navbar navbar-expand-lg navbar-dark" >
+        
         <div class="container">
             <a class="navbar-brand" href="#">圖書系統</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <style>
-                    .navbar {
-                        background-image: url('static/images/abc.jpg');
-                        background-size: cover;
-                    }
-                </style>   
+                  
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/">首頁</a>
@@ -59,16 +55,23 @@
                     </li>
                     <!-- 下拉式選單 -->
                     <div class="nav-item">
-                        <label for="pages">出處：</label>
-                        <select id="pages" class="form-select" onchange="window.location.href=this.value;">
+                    <li class="nav-item ml-auto">
+                        <select id="pages" class="custom-select" onchange="window.location.href=this.value;">
                             <option value="">MENU</option>
                             <option value="https://kknews.cc/zh-tw/news/9glkrl.html">推薦大學生讀的書</option>
                             <option value="https://schnauzerlulu.com/must-read-once-books-for-lifetime/">人生必讀六本書</option>
                             <option value="https://www.harpersbazaar.com/tw/culture/theatreandbooks/g31316313/10-books-recommendation-2020/">強大自己心靈的書</option>
                         </select>
+                    </li>
                     </div>   
                     <div class="container">
                     </div>                 
+                    <style>
+                        .navbar {
+                            background-image: url('static/images/abc.jpg');
+                            background-size: cover;
+                        }
+                    </style> 
                 </ul>
             </div>
         </div>
@@ -78,7 +81,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-3">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body">                       
                         <!-- 卡片內容 -->
                     </div>
                 </div>
@@ -93,7 +96,7 @@
                     </div>
                     <div class="card-body">
                         {{ your_text|linebreaksbr }}
-                        <p>{{ postbb.body }}</p>
+                        {{ postbb.body }}
                         {% block content %} {% endblock %}
                     </div>
                     <div class="card-footer">
@@ -107,4 +110,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
-
