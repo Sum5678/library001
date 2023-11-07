@@ -4,13 +4,16 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import redirect
 from django.shortcuts import render
+import logging
+from .models import Postbb
 
+logger = logging.getLogger(__name__)
 # Create your views here.
 def homepage(request):
     posts = Postbb.objects.all()
     now = datetime.now()
     return render(request, 'index.html', {'posts':posts})
-   
+
 def showpost(request, slug):
     try:
         postbb = Postbb.objects.get(slug=slug) 
@@ -24,6 +27,34 @@ def showpost(request, slug):
 
     
 '''
+000
+111
+
+def showpost(request, slug):
+    try:
+        postbb = Postbb.objects.get(slug=slug)
+        logger.debug(f'Found postbb with slug: {slug}, title: {postbb.title}')
+        if postbb is not None:
+            return render(request, 'post.html', {'postbb': postbb})
+        else:
+            return redirect("/")
+    except Postbb.DoesNotExist:
+        logger.warning(f'Postbb with slug {slug} does not exist')
+        return redirect("/")
+111
+
+def showpost(request, slug):
+    try:
+        postbb = Postbb.objects.get(slug=slug) 
+        if postbb != None:
+            return render(request, 'post.html', locals())
+        else:
+            return redirect("/")    
+    except:
+        return redirect("/")
+
+000
+
 def homepage(request):
     posts = Post.objects.all() #select * from post
     post_lists = list()
