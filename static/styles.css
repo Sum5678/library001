@@ -3,7 +3,7 @@
     background-image: url('/static/images/abcd.jpg'); /* 替換為你的圖片路徑 */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
 
 
