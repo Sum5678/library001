@@ -44,7 +44,7 @@
             </nav>        
         
         <div class="container">
-            <a class="navbar-brand" href="#">書有黃金屋</a>
+            <a class="navbar-brand" href="#">11056001 吳想想</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -100,6 +100,9 @@
                     <div class="card-body">
                         {{ your_text|linebreaksbr }}
                         {{ postbb.body }}
+                        {% if post.image_url %}
+                        <img src="{{ post.image_url }}" alt="Post Image">
+                        {% endif %}
                         {% block content %} {% endblock %}
                     </div>
                     <div class="card-footer">

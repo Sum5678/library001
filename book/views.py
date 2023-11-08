@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from book.models import Postbb
 from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import redirect
