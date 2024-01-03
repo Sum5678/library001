@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.contrib.auth',
             ],
         },
     },
@@ -126,3 +127,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+
+# 設置當用戶未登入時將被重定向的 URL
+LOGIN_URL = 'login'
+
+# 設置用戶在登出後被重定向到的 URL
+LOGOUT_REDIRECT_URL = 'home'

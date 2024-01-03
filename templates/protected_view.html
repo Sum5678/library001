@@ -1,0 +1,20 @@
+{% extends 'base2.html' %}
+
+{% block title %}Protected View{% endblock title %}
+
+{% block content %}
+    <h2 style="font-family: 微軟正黑體;">這是一個受保護的視圖</h2>
+    <p style="font-family: 微軟正黑體;">只有登入的用戶才能訪問這個頁面。</p>
+
+    <div style="margin-top: 20px;">
+        <h3 style="font-family: 微軟正黑體;">一些受保護內容</h3>
+        <p style="font-family: 微軟正黑體;">這是只有登入的用戶才能看到的內容。</p>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <h3 style="font-family: 微軟正黑體;">使用者資訊</h3>
+        <p style="font-family: 微軟正黑體;">你可以在這裡顯示使用者的相關資訊，例如使用者名稱、電子郵件等。</p>
+        <p style="font-family: 微軟正黑體;">使用者名稱：{{ user.username }}</p>
+        <p style="font-family: 微軟正黑體;">電子郵件：{{ user.email }}</p>
+    </div>
+{% endblock %}

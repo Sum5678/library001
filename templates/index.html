@@ -3,6 +3,11 @@
 
 {% block title %}Welcome!{% endblock title %}
 {% block headmessage %}
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}!</p>
+{% else %}
+    <p>Please log in to see this content.</p>
+{% endif %}
 <h3 style="font-family:微軟正黑體;">本站文章列表</h3>
 {% endblock headmessage %}
 

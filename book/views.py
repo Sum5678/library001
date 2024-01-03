@@ -4,7 +4,9 @@ from datetime import datetime
 from django.shortcuts import redirect
 from django.shortcuts import render
 import logging
+from django.shortcuts import render
 from .models import Postbb
+from django.contrib.auth.decorators import login_required
 
 logger = logging.getLogger(__name__)
 # Create your views here.
@@ -23,6 +25,9 @@ def showpost(request, slug):
     except:
         return redirect("/")
 
+@login_required
+def my_protected_view(request):
+    return render(request, 'protected_view.html', {'user': request.user})
 
     
 '''

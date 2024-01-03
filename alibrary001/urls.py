@@ -17,8 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from book.views import homepage,showpost
+from django.contrib.auth.views import LoginView, LogoutView
+from django.urls import path
+from book.views import my_protected_view
+
 
 urlpatterns = [
+    path('protected/', my_protected_view, name='protected_view'),
     path('admin/', admin.site.urls),
     path('', homepage, name="homepage"),
     path('post/<slug:slug>/', showpost, name="showpost")
