@@ -4,7 +4,7 @@ from datetime import datetime
 from django.shortcuts import redirect
 from django.shortcuts import render
 import logging
-from django.shortcuts import render
+from django.shortcuts import render                   
 from .models import Postbb
 from django.contrib.auth.decorators import login_required
 
